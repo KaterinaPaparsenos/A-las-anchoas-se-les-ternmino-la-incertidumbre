@@ -7,3 +7,15 @@ En el poster hablamos sobre que son los modelos de distribución de especies (SD
 
 Este poster es una pequeña parte de nuestros respectivos trabajos fin de master. Hemos empezado nuestro proyecto hace poco, por lo que nos queda mucho por desarrollar y mejorar. Cualquier sugerencia o idea respecto al tema será bienvenida.
 
+
+# MODELO 1: MAXENT
+
+
+# MODELO 2: BIOCLIM
+
+
+# MODELO 3: MODELO LINEAL GENERALIZADO (GLM)
+
+
+# MODELO 4: GEOESPACIAL BAYESIANO
+
