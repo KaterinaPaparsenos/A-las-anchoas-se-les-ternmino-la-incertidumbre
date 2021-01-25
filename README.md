@@ -8,7 +8,7 @@ En el poster hablamos sobre que son los modelos de distribución de especies (SD
 Este poster es una pequeña parte de nuestros respectivos trabajos fin de master. Hemos empezado nuestro proyecto hace poco, por lo que nos queda mucho por desarrollar y mejorar. Cualquier sugerencia o idea respecto al tema será bienvenida.
 
 
-# INTRO:
+# INTRO (cambiar titulo):
 
 Los modelos de distribución de especies (SDM) son el principal método de modelización en ecología cuantitativa. Se utilizan principalmente para estudiar la distribución geográfica de las especies de nuestro planeta, así como para evaluar el impacto que tendrá el cambio climático en sus distribuciones.
 
@@ -24,14 +24,26 @@ La anchoa europea (Engraulis encrasicolus) es una de las especies marinas más s
 
 En nuestro póster, nosotras evaluamos cómo afectará el cambio climático en la distribución de la anchoa europea en el Atlántico norte y el Mediterráneo. Primero calculamos distintos modelos de distribución de especies (SDMs) con diferentes enfoques estadísticos, frecuentista y bayesiano, para determinar su actual posición geográfica. Luego proyectamos la posible futura distribución de esta especie para el futuro escenario RCP 4.5 en el cual se propone que la temperatura global aumentará aproximadamente 1.4 oC y las emisiones de los gases de efecto invernadero empezarán a disminuir a partir del 2040.
 
-# MODELO 1: MAXENT
+# OBTENCION DE DATOS:
 
 
-# MODELO 2: BIOCLIM
+# METODOLOGÍA SEGUIDA:
+
+### MODELO 1: MAXENT
 
 
-# MODELO 3: MODELO LINEAL GENERALIZADO (GLM)
+#### MODELO 2: BIOCLIM
 
 
-# MODELO 4: GEOESPACIAL BAYESIANO
+#### MODELO 3: MODELO LINEAL GENERALIZADO (GLM)
+
+
+#### MODELO 4: GEOESPACIAL BAYESIANO
+
+
+# RESULTADOS:
+
+# CONCLUSIONES:
+
+
 
