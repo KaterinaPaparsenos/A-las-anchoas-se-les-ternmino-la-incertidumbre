@@ -29,7 +29,7 @@ La anchoa europea (Engraulis encrasicolus) es una de las especies marinas más s
 
 En nuestro póster, nosotras evaluamos cómo afectará el cambio climático en la distribución de la anchoa europea en el Atlántico norte y el Mediterráneo. Primero calculamos distintos modelos de distribución de especies (SDMs) con diferentes enfoques estadísticos, frecuentista y bayesiano, para determinar su actual posición geográfica. Luego proyectamos la posible futura distribución de esta especie para el futuro escenario RCP 4.5 en el cual se propone que la temperatura global aumentará aproximadamente 1.4 oC y las emisiones de los gases de efecto invernadero empezarán a disminuir a partir del 2040.
 
-# ¿COMO HEMOS OBTENIDO NUESTROS DATOS? :
+# ¿DE DONDE SACAMOS NUESTROS DATOS? :
 
 
 # ¿QUE MODELOS HEMOS UTILIZADO? :
