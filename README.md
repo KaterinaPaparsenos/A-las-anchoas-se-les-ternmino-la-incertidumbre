@@ -3,15 +3,17 @@
 Autoras: Irene Extremera Serrano & Caterina O. Paparsenos Fernández
 
 ***
+
 Este repositorio contiene información más detallada respecto al poster que hemos presentado en las V Jornadas Científicas de Estudiantes de la SEB realizadas en enero 2021.
 
-En el poster hablamos sobre que son los modelos de distribución de especies (SDM) y cual es su finalidad. También, mostramos algunos modelos realizados realizados por nosotras, tanto con métodos frecuentistas como con bayesianos, con el fin de determinar la actual destribución espacial de la anchoa europea (_Engraulis encrasicolus_) en el Atlántico norte y Mediterráneo. Hacemos una comparativa entre estos modelos para ver cual realiza mejores predicciones y, finalmente, realizamos predicciones para observar el impacto que tendrá el cambio climático sobre la distribución de dicha especie.
+En el poster hablamos sobre que son los modelos de distribución de especies (SDM) y cual es su finalidad. También, mostramos algunos modelos realizados por nosotras, tanto con métodos frecuentistas como con bayesianos, con el fin de determinar la actual destribución espacial de la anchoa europea (_Engraulis encrasicolus_) en el Atlántico norte y Mediterráneo. Hacemos una comparativa entre estos modelos para ver cual realiza mejores predicciones y, finalmente, realizamos predicciones para observar el impacto que tendrá el cambio climático sobre la distribución de dicha especie.
 
 Esta pagina junto con el poster son una pequeña parte de nuestros trabajos fin de master. Hemos empezado hace poco, por lo que nos queda mucho por desarrollar y mejorar. Cualquier sugerencia o idea respecto al tema será bienvenida.
+
 ***
 
 
-# INTRO (cambiar titulo):
+# ¿PORQUE ESTUDIAR LA DISTRIBUCIÓN DE LAS ANCHOAS? :
 
 Los modelos de distribución de especies (SDM) son el principal método de modelización en ecología cuantitativa. Se utilizan principalmente para estudiar la distribución geográfica de las especies de nuestro planeta, así como para evaluar el impacto que tendrá el cambio climático en sus distribuciones.
 
@@ -27,10 +29,10 @@ La anchoa europea (Engraulis encrasicolus) es una de las especies marinas más s
 
 En nuestro póster, nosotras evaluamos cómo afectará el cambio climático en la distribución de la anchoa europea en el Atlántico norte y el Mediterráneo. Primero calculamos distintos modelos de distribución de especies (SDMs) con diferentes enfoques estadísticos, frecuentista y bayesiano, para determinar su actual posición geográfica. Luego proyectamos la posible futura distribución de esta especie para el futuro escenario RCP 4.5 en el cual se propone que la temperatura global aumentará aproximadamente 1.4 oC y las emisiones de los gases de efecto invernadero empezarán a disminuir a partir del 2040.
 
-# OBTENCION DE DATOS:
+# ¿COMO HEMOS OBTENIDO NUESTROS DATOS? :
 
 
-# METODOLOGÍA SEGUIDA:
+# ¿QUE MODELOS HEMOS UTILIZADO? :
 
 #### MODELO 1: MAXENT
 
@@ -44,9 +46,9 @@ En nuestro póster, nosotras evaluamos cómo afectará el cambio climático en l
 #### MODELO 4: GEOESPACIAL BAYESIANO
 
 
-# RESULTADOS:
+# NUETROS RESULTADOS:
 
-# CONCLUSIONES:
+# ¿QUE HEMOS OBTENIDO DE TODO ESTO? :
 
 
 
