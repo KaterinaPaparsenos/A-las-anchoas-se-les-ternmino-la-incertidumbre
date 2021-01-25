@@ -29,7 +29,7 @@ En nuestro póster, nosotras evaluamos cómo afectará el cambio climático en l
 
 # METODOLOGÍA SEGUIDA:
 
-### MODELO 1: MAXENT
+#### MODELO 1: MAXENT
 
 
 #### MODELO 2: BIOCLIM
