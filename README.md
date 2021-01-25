@@ -1,5 +1,10 @@
 # A las anchoas se les ternminó la incertidumbre.
 
+```
+{
+  "autoras": "Irene Extremera Serrano & Caterina O. Paparsenos Fernández",
+}
+```
 
 Este repositorio contiene información más detallada respecto al poster que presentamos Irene Extremera y yo en las V Jornadas Científicas de Estudiantes de la SEB realizadas en enero 2021.
 
