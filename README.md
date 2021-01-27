@@ -173,6 +173,12 @@ A continuación se muestran los valores de los parametros obtenidos para nuestro
 
 ![Modelo estimado en INLA](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/summary_modelo_inla.PNG?raw=true)
 
+Las ventajas que tiene este modelo respecto a los anteriores son:
+-	Se incluye en la estimación la autocorrelación espacial de los datos 
+-	La estimación de los parámetros es más exacta y la interpretación de los resultados es fácil y directa (ya que indican la probabilidad de que un parámetro tome un cierto valor). 
+-	Podemos especificar las distribuciones de los parámetros (dependientes a su vez de otros parámetros) cuando sabemos cómo se distribuyen (priors).
+
+
 
 # NUETROS RESULTADOS
 
