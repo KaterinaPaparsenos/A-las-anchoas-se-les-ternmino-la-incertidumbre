@@ -18,10 +18,10 @@ Esta pagina junto con el poster son una pequeña parte de nuestros trabajos fin 
 Los modelos de distribución de especies (SDM) son el principal método de modelización en ecología cuantitativa. Se utilizan principalmente para estudiar la distribución geográfica de las especies de nuestro planeta, así como para evaluar el impacto que tendrá el cambio climático en sus distribuciones.
 
 La dificultad de los SDMs es encontrar métodos que consigan vincular de manera eficiente la información que se tiene de las especies con las variables ambientales para poder  predecir dónde es (o cuanto de) probable (es) que estén presentes en lugares o periodos de tiempo no muestreados. Normalmente se utilizan modelos complejos donde se encuentran problemas como:
-- exceso de ceros
-- no linealidad de la variables explixatorias
-- varianza no constante
-- correlación espacio-temporal 
+- Exceso de ceros
+- No linealidad de la variables explixatorias
+- Varianza no constante
+- Correlación espacio-temporal 
 
 La capacidad de adaptación a los cambios ambientales varía mucho entre los diferentes organismos. Las distribuciones de las especies más sensibles se verán muy afectadas por el continuo calentamiento del planeta, mientras que muchas llegarán a extinguirse.
 
@@ -49,15 +49,15 @@ Una vez que tuvimos todas las variables, nos quedamos únicamente con las presen
 # SELECCIÓN DE VARIABLES
 
 En cuanto a la selección de covariables primero miramos la correlación entre ellas.
-(/Imágenes/correlación.jpg)
+[](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/correlación.jpg)
 
 Se aprecia sobre todo que hay una alta correlación entre ppmean con tempmean y salinity. 
 Con el fin de ver cómo es la forma en la cual se relacionan las variables entre si para valorar la posibilidad de en un futuro realizar o no un modelo aditivo generalizado (gam).
-(https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/Gpairs.jpg)
+[](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/Gpairs.jpg)
 
 A la vista de que la relación entre las covariables no es para nada lineal decidimos decantarnos por realizar modelos lineales generalizados (glm, tanto en frecuentista como en INLA) y, más adelante probar ajustando con un gam.
 Posteriormente para poder decantarnos finalmente con qué variables quedarnos para comenzar a ajustar los modelos miramos el GVIF. Primero introducimos  las seis variables juntas y a continuación fuimos, una a una, quitando las que tenían un GVIF mas alto. El resultado final fue el siguiente:
-(https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/Tabla.png)
+[](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/Tabla.png)
 
 # ¿QUE MODELOS HEMOS UTILIZADO? 
 
@@ -113,8 +113,8 @@ En cuanto a los inconvenientes que hemos encontrado usando la función del paque
 - No se puede cambiar el valor de lambda.
 - No se puede cambiar la probabilidad inicial de 0.5.
 - Tampoco se puede modificar las áreas de estudio y el área total que coge para realizar el ajuste.
-E
-n resumen, MAXENT en Rstudio, al menos con el paquete que hemos utilizado es una caja muy negra. Sin embargo, es bastante rápido y sencillo en comparación con otros modelos y la calidad predictiva es bastante alta.
+
+En resumen, MAXENT en Rstudio, al menos con el paquete que hemos utilizado es una caja muy negra. Sin embargo, es bastante rápido y sencillo en comparación con otros modelos y la calidad predictiva es bastante alta.
 De cara al futuro estamos valorando el utilizar otro paquete o un tipo de software para poder tener un control sobre todo lo comentado en inconvenientes.
 
 #### MODELO 3: MODELO LINEAL GENERALIZADO (GLM)
