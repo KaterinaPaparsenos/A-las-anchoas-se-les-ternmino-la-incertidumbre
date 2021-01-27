@@ -137,25 +137,27 @@ Como se trata de un modelo Jerárquico Bayesiano, tiene varios niveles:
 **Nivel 1**: _Verosimilitud_
 
 Se trata de la función de verosimilitud condicionalmente independiente en la cual nuestra variable respuesta ![y_i](https://latex.codecogs.com/gif.latex?y_i), dado nuestros datos, sigue una distribución ![Ber(\pi](https://latex.codecogs.com/gif.latex?%7E%20Ber%28%5Cpi%29)
-(1 es la presencia y 0 la pseudoausencia). Como función de enlace hemos utilizado la función “_logit_”. Por lo tanto, la probabilidad de ocurrencia se calculará de la siguiente manera:
+(1 es la presencia y 0 la pseudoausencia). Como función de enlace hemos utilizado la función _logit_. Por lo tanto, la probabilidad de ocurrencia se calculará de la siguiente manera:
+![logit(\pi)= \alpha+ \beta_i X_i+ W_i](https://latex.codecogs.com/gif.latex?logit%28%5Cpi%29%3D%20%5Calpha&plus;%20%5Cbeta_i%20X_i&plus;%20W_i),
 
-$logit(\pi)= \alpha+ \beta_i X_i+ W_i$,
-
-donde $\alpha$= intercept; $\beta_i X_i$= predictor linear para cada observación i; $W_i$= efecto aleatorio espacial
+donde ![\alpha= intercept](https://latex.codecogs.com/gif.latex?%5Calpha%3D%20intercept) y
+![\beta_i X_i](https://latex.codecogs.com/gif.latex?%5Cbeta_i%20X_i%3D ) y ![W_i](https://latex.codecogs.com/gif.latex?W_i) son el predictor fijo linear y el efecto aleatorio espacial para cada observación i, respectivamente. 
 
 **Nivel 2**: _Campo Latente Gausiano_
 
 *	Efectos fijos: 
 
-⋅⋅⋅Consideramos que el predictor lineal sigue una distribución normal de parámetros$\mu$ y $\sigma^2$. Como distribución a priori para el predictor lineal, hemos utilizado el que viene por defecto en INLA que es una distribución Gausiana N(0,100)
+⋅⋅⋅Consideramos que el predictor lineal sigue una distribución normal de parámetros ![mi](https://latex.codecogs.com/gif.latex?%5Cmu) y ![\sigma^2](https://latex.codecogs.com/gif.latex?%5Csigma%5E2). Como distribución a priori para el predictor lineal, hemos utilizado el que viene por defecto en INLA que es una distribución Gausiana N(0,100)
 
 * Efecto aleatorio:
 
-⋅⋅⋅El efecto aleatorio especial $W$ es una función isotrópica de covarianza Matérn y se asume que sigue una distribución Gaussiana multivariante donde su matriz de covarianza depende de las distancias entre las observaciones y los hyperparametros varianza ($\sigma^2$) y rango ($\phi$) (es la distancia a partir de la cual dos observaciones dejan de estar correlacionadas):
-`$W_i~ N(0, \sigma^2 H(\phi))$`   $W_i~ N(0, \sigma^2 H(\phi))$ 
+⋅⋅⋅El efecto aleatorio especial _W_ es una función isotrópica de covarianza Matérn y se asume que sigue una distribución Gaussiana multivariante donde su matriz de covarianza depende de las distancias entre las observaciones y los hyperparametros varianza (![\sigma^2](https://latex.codecogs.com/gif.latex?%5Csigma%5E2)) y rango (![fi](https://latex.codecogs.com/gif.latex?%5Cphi)) (es la distancia a partir de la cual dos observaciones dejan de estar correlacionadas): 
+![W_i](https://latex.codecogs.com/gif.latex?W_i) ~ ![N(0, \sigma^2 H(\phi)](https://latex.codecogs.com/gif.latex?N%280%2C%20%5Csigma%5E2%20H%28%5Cphi%29)
 
-⋅⋅⋅A nivel computacional, esta matriz es muy difícil de calcular, pero al utilizar el método INLA se utiliza el **SPDE** (Stochastic Partial Differential Equation approach) para poder llegar a calcular esa matriz de covarianza de manera indirecta. EL SPDE lo que hace es reparametrizar esta matriz con otros dos parámetros ($\kappa$ y $\tau$) tal que así: $W_i~ N(0, Q($\kappa$,$\tau$)$;
-⋅⋅⋅Donde $\kappa$ y $\tau$ determinan el rango y la varianza del efecto espacial respectivamente.
+⋅⋅⋅A nivel computacional, esta matriz es muy difícil de calcular, pero al utilizar el método INLA se utiliza el **SPDE** (Stochastic Partial Differential Equation approach) para poder llegar a calcular esa matriz de covarianza de manera indirecta. EL SPDE lo que hace es reparametrizar esta matriz con otros dos parámetros ![$\kappa$](https://latex.codecogs.com/gif.latex?%5Ckappa) y ![$\tau$](https://latex.codecogs.com/gif.latex?%5Ctau), tal que así: 
+![W_i](https://latex.codecogs.com/gif.latex?W_i) ~ ![N(0, Q($\kappa$,$\tau$)$](https://latex.codecogs.com/gif.latex?N%280%2C%20Q%28%5Ckappa%2C%5Ctau%29%29) 
+;
+⋅⋅⋅Donde ![$\kappa$](https://latex.codecogs.com/gif.latex?%5Ckappa) y ![$\tau$](https://latex.codecogs.com/gif.latex?%5Ctau) determinan el rango y la varianza del efecto espacial respectivamente.
 
 
 **Nivel 3**: _Hyperparametros_
