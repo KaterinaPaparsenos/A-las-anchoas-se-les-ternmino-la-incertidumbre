@@ -130,7 +130,7 @@ Para esta estimación, hemos utilizado el software R-INLA () ya que……( es un
 
 Por lo tanto, el modelo que hemos utilizado para estimar la distribución de la anchoa europea es el que se muestra en el diagrama a continuación: (diagrama de INLA)
 
-![alt text](image.jpg)
+![Diagrama del modelo relizado (estilo Kruschke)](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/INLA_krusche_diagram.png)
 
 Como se trata de un modelo Jerárquico Bayesiano, tiene varios niveles:
 
@@ -157,6 +157,9 @@ Como distribuciones a priori para estos hyperparametros, hemos utilizado los val
 El SPDE a efectos prácticos se realiza con el uso del mesh (Delaunay triangulation).
 (Imagen del mesh)
 
+![Nuestro mesh](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/mesh_plot.PNG)
+
+![Distribucion a posterior del efecto espacial](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/plot_dist_poster_efEspacial.PNG)
 
 
 # NUETROS RESULTADOS
