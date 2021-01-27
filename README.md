@@ -13,7 +13,7 @@ En caso de dudas, sugerencias u otra cosa, pueden escribirnos a kateopap@gmail.c
 ***
 
 
-# ¿PORQUE ESTUDIAR LA DISTRIBUCIÓN DE LAS ANCHOAS? :
+# ¿PORQUE ESTUDIAR LA DISTRIBUCIÓN DE LAS ANCHOAS?
 
 Los modelos de distribución de especies (SDM) son el principal método de modelización en ecología cuantitativa. Se utilizan principalmente para estudiar la distribución geográfica de las especies de nuestro planeta, así como para evaluar el impacto que tendrá el cambio climático en sus distribuciones.
 
@@ -120,6 +120,20 @@ De cara al futuro estamos valorando el utilizar otro paquete o un tipo de softwa
 
 #### MODELO 3: MODELO LINEAL GENERALIZADO (GLM)
 
+Hemos realizado una regresión logística (GLM con función de enlace _logit_) ya que nuestra variable respuesta es dicotómica (presencia o pseudoausencia de la anchoa). Hemos utilizado la función ```glm ``` de _R_ y la función de probabilidad que utilizamos fue la binomial (```family= "binomial"```).
+
+En la siguiente imagen se muestra la salida del ```summary() ``` para nuestro modelo.
+
+![glm frecuentista summary](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/modelo%20GLM%20frecuentista.PNG?raw=true)
+
+Según los p-valores obtenidos, de las variables solo la batimetría y la salinidad son significativas. No hemos eliminado el resto de variables para poder hacer comparaciones con el resto de modelos.
+
+Es importante mencionar que el modelo GLM no ajusta la variable respuesta sino a la función de enlace. En el caso del modelo logit esta función es ![logit(\pi )](https://latex.codecogs.com/gif.latex?logit%28%5Cpi%20%29%3D%20log%28%5Ctfrac%7B%5Cpi%20%7D%7B1-%5Cpi%20%7D%29), ![\pi ](https://latex.codecogs.com/gif.latex?%5Cpi) donde es la probabilidad que la anchoa tome valor 1 (presencia en ese punto).
+Al cociente ![\frac{\pi }{1-\pi }](https://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cpi%20%7D%7B1-%5Cpi%20%7D) se le conoce como _odds ratio_ y por tanto, los coeficientes del modelo logit se interpretan como el logaritmo del odds ratio. Como se puede ver, la interpretabilidad del modelo puede ser algo confusa.
+
+
+
+
 
 #### MODELO 4: MODELO GEOESPACIAL BAYESIANO:
 
@@ -146,12 +160,13 @@ donde ![\alpha= intercept](https://latex.codecogs.com/gif.latex?%5Calpha%3D%20in
 
 *	Efectos fijos: 
 
-Consideramos que el predictor lineal sigue una distribución normal de parámetros ![mi](https://latex.codecogs.com/gif.latex?%5Cmu) y ![\sigma^2](https://latex.codecogs.com/gif.latex?%5Csigma%5E2). Como distribución a priori para el predictor lineal, hemos utilizado el que viene por defecto en INLA que es una distribución Gausiana N(0,100)
+Consideramos que el predictor lineal sigue una distribución normal de parámetros ![mi](https://latex.codecogs.com/gif.latex?%5Cmu) y ![\sigma^2](https://latex.codecogs.com/gif.latex?%5Csigma%5E2). Como distribución a priori para el predictor lineal, hemos utilizado el que viene por defecto en INLA que es una distribución Gausiana N(0,100).
 
 * Efecto aleatorio:
 
 El efecto aleatorio especial _W_ es una función isotrópica de covarianza Matérn y se asume que sigue una distribución Gaussiana multivariante donde su matriz de covarianza depende de las distancias entre las observaciones y los hyperparametros varianza (![\sigma^2](https://latex.codecogs.com/gif.latex?%5Csigma%5E2)) y rango (![fi](https://latex.codecogs.com/gif.latex?%5Cphi)) (es la distancia a partir de la cual dos observaciones dejan de estar correlacionadas): 
-![W_i](https://latex.codecogs.com/gif.latex?W_i) ~ ![N(0, \sigma^2 H(\phi)](https://latex.codecogs.com/gif.latex?N%280%2C%20%5Csigma%5E2%20H%28%5Cphi%29)
+
+![W_i](https://latex.codecogs.com/gif.latex?W_i) ~ ![N(0, \sigma^2 H(\phi)](https://latex.codecogs.com/gif.latex?N%280%2C%20%5Csigma%5E2%20H%28%5Cphi%29).
 
 A nivel computacional, esta matriz es muy difícil de calcular, pero al utilizar el método INLA se utiliza el **SPDE** (Stochastic Partial Differential Equation approach) para poder llegar a calcular esa matriz de covarianza de manera indirecta. EL SPDE lo que hace es reparametrizar esta matriz con otros dos parámetros ![$\kappa$](https://latex.codecogs.com/gif.latex?%5Ckappa) y ![$\tau$](https://latex.codecogs.com/gif.latex?%5Ctau), tal que así: 
 ![W_i](https://latex.codecogs.com/gif.latex?W_i) ~ ![N(0, Q($\kappa$,$\tau$)$](https://latex.codecogs.com/gif.latex?N%280%2C%20Q%28%5Ckappa%2C%5Ctau%29%29);
