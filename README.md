@@ -136,7 +136,7 @@ Como se trata de un modelo Jerárquico Bayesiano, tiene varios niveles:
 
 **Nivel 1**: _Verosimilitud_
 
-Se trata de la función de verosimilitud condicionalmente independiente en la cual nuestra variable respuesta $y_i$, dado nuestros datos, sigue una distribución Bernoulli $y_i~ Ber(\pi)$
+Se trata de la función de verosimilitud condicionalmente independiente en la cual nuestra variable respuesta ![y_i](https://latex.codecogs.com/gif.latex?y_i), dado nuestros datos, sigue una distribución ![Ber(\pi](https://latex.codecogs.com/gif.latex?%7E%20Ber%28%5Cpi%29)
 (1 es la presencia y 0 la pseudoausencia). Como función de enlace hemos utilizado la función “_logit_”. Por lo tanto, la probabilidad de ocurrencia se calculará de la siguiente manera:
 
 $logit(\pi)= \alpha+ \beta_i X_i+ W_i$,
