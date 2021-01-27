@@ -163,7 +163,7 @@ donde ![$\kappa$](https://latex.codecogs.com/gif.latex?%5Ckappa) y ![$\tau$](htt
 Son los hyperparametros del efecto espacial que se calculan de la siguiente manera:
 ![2log\kappa](https://latex.codecogs.com/gif.latex?2log%28%5Ckappa%29) ~ ![N(\mu_\kappa, p_kappa)](https://latex.codecogs.com/gif.latex?N%28%5Cmu_%5Ckappa%2C%20p_%5Ckappa%29) y ![log\tau](https://latex.codecogs.com/gif.latex?log%5Ctau) ~ ![N(\mu_\tau, p_\tau)](https://latex.codecogs.com/gif.latex?N%28%5Cmu_%5Ctau%2C%20p_%5Ctau%29).
 
-Como distribuciones a priori para estos hyperparametros, hemos utilizado los valores que tiene INLA por defecto, que son: rango ![fi](https://latex.codecogs.com/gif.latex?%5Cphi) es el 20%$ de nuestro área de estudio y la varianza ![\sigma^2](https://latex.codecogs.com/gif.latex?%5Csigma%5E2) vale 1.
+Como distribuciones a priori para estos hyperparametros, hemos utilizado los valores que tiene INLA por defecto, que son: rango ![fi](https://latex.codecogs.com/gif.latex?%5Cphi) es el 20% de nuestro área de estudio y la varianza ![\sigma^2](https://latex.codecogs.com/gif.latex?%5Csigma%5E2) vale 1.
 
 El SPDE a efectos prácticos se realiza con el uso del mesh (Delaunay triangulation). EN nuestro modelo, el mesh utilizado ha sido el siguiente.
 
