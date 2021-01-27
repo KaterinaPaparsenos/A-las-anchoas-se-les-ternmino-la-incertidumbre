@@ -49,7 +49,7 @@ Con respecto a las covariables recortamos los ráster para trabajar solo en el c
 # SELECCIÓN DE VARIABLES
 
 En cuanto a la selección de covariables primero miramos la correlación entre ellas.
-![Diagrama de correlaciones](/Imágenes/correlación.jpg)
+![Diagrama de correlaciones](.../Imágenes/correlación.jpg)
 
 Se aprecia sobre todo que hay una alta correlación entre ppmean con tempmean y salinity. 
 Con el fin de ver cómo es la forma en la cual se relacionan las covariables entre si para valorar la posibilidad de en un futuro realizar o no un modelo aditivo generalizado (gam).
@@ -58,7 +58,7 @@ Con el fin de ver cómo es la forma en la cual se relacionan las covariables ent
 A la vista de que la relación entre las covariables no es para nada lineal, decidimos decantarnos por realizar modelos lineales generalizados (glms, tanto en frecuentista como en INLA) debido a que la varaible respuesta sigue una distribución binomial  y, más adelante probar ajustando con un gam.
 Posteriormente para poder decantarnos finalmente con qué variables quedarnos para comenzar a ajustar los modelos miramos el GVIF. Primero introducimos las seis variables juntas y a continuación fuimos, una a una, quitando las que tenían un GVIF mas alto. El resultado final fue el siguiente:
 
-![Tabla comparacion de variables ambientales](/Im%C3%A1genes/Tabla.png)
+![Tabla comparacion de variables ambientales](.../Imágenes/Tabla.png)
 
 # ¿QUE MODELOS HEMOS UTILIZADO? 
 
@@ -129,7 +129,7 @@ Para la estimación de este modelo hemos utilizado el software R-INLA ya que nos
 
 Por lo tanto, el modelo que hemos utilizado para estimar la distribución de la anchoa europea es el que se muestra en el diagrama a continuación: (diagrama de INLA)
 
-![Diagrama del modelo relizado (estilo Kruschke)](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/INLA_krusche_diagram.png)
+![Diagrama del modelo relizado (estilo Kruschke)](.../Imágenes/INLA_krusche_diagram.png)
 
 Como se trata de un modelo Jerárquico Bayesiano, tiene varios niveles:
 
@@ -167,11 +167,11 @@ Como distribuciones a priori para estos hyperparametros, hemos utilizado los val
 
 El SPDE a efectos prácticos se realiza con el uso del mesh (Delaunay triangulation). EN nuestro modelo, el mesh utilizado ha sido el siguiente.
 
-![Nuestro mesh](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/mesh_plot.PNG)
+![Nuestro mesh](.../Imágenes/mesh_plot.PNG)
 
 A continuación se muestran los valores de los parametros obtenidos para nuestro modelos.
 
-![Modelo estimado en INLA](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/summary_modelo_inla.PNG)
+![Modelo estimado en INLA](.../Imágenes/summary_modelo_inla.PNG)
 
 
 # NUETROS RESULTADOS
