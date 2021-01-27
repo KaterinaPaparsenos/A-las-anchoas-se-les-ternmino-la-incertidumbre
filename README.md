@@ -49,11 +49,11 @@ Una vez que tuvimos todas las variables, nos quedamos únicamente con las presen
 # SELECCIÓN DE VARIABLES
 
 En cuanto a la selección de covariables primero miramos la correlación entre ellas.
-![alt text](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/correlación.jpg)
+![alt text](/Im%C3%A1genes/correlación.jpg)
 
 Se aprecia sobre todo que hay una alta correlación entre ppmean con tempmean y salinity. 
 Con el fin de ver cómo es la forma en la cual se relacionan las variables entre si para valorar la posibilidad de en un futuro realizar o no un modelo aditivo generalizado (gam).
-![alt text](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/Gpairs.jpg)
+![alt text](/Im%C3%A1genes/Gpairs.jpg)
 
 A la vista de que la relación entre las covariables no es para nada lineal decidimos decantarnos por realizar modelos lineales generalizados (glm, tanto en frecuentista como en INLA) y, más adelante probar ajustando con un gam.
 Posteriormente para poder decantarnos finalmente con qué variables quedarnos para comenzar a ajustar los modelos miramos el GVIF. Primero introducimos  las seis variables juntas y a continuación fuimos, una a una, quitando las que tenían un GVIF mas alto. El resultado final fue el siguiente:
