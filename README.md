@@ -201,11 +201,18 @@ Para evaluar la calidad de las predicciones realizadas creamos una función que 
 
 ![alt text](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/Criterios%20de%20Calidad.png?raw=true)
 
-La siguiente parte fue realizar el mapa predictivo de los correspondientes modelos realizados: ( METER IMÁGENES PREDICCION)
+La siguiente parte fue realizar el mapa predictivo de los correspondientes modelos realizados.
 
-| predictiva MAXENT      | predictiva a posteriori INLA    | 
-| ------------- |:-------------:| 
-| ![Maxent pred](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/predict_maxent.jpg?raw=true) | ![INLA pred](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/INLA_predictiva_rpc4.5.png?raw=true) |
+Solo se mostrarán 2 gráficas para las distribuciones del cambio climático. 
+En la primera imagen se muestra la distribución predictiva según el modelo frecuentista MAXENT. Se calcula que las anchoas entre el 2040 y 2050, según el escenario climático RCP 4.5, se encontrarán principalmente en la costa norte de Europa. En el Mediterráneo habrá gran reducción de la especie, con única excepción el mar Adriático.
+
+![Maxent pred](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/maxent%20perfecto.jpg?raw=true)
+
+En la siguiente imagen se muestra la distribución predictiva a posteriori para la media del modelo estimado con INLA. Se puede ver como los resultados son muy similares. Al igual que antes, la anchoa se encontrará principalmente en la costa noreste del Atlántico. Sin embargo, respecto a su distribución en el Mediterráneo, la probabilidad en el mar Adriático es menor, pero es mayor en la costa este de la península ibérica. 
+
+![INLA pred](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/INLA_predictiva_rpc4.5.png?raw=true)
+
+Es necesario mencionar que en esta última predictiva no se muestra el mar Negro y la probabilidad en el mediterraneo este es muy pequeña debido a que no se tuvieron en cuenta esas zonas a la hora de modelizar los datos.
 
 
 # ¿QUE HEMOS OBTENIDO DE TODO ESTO? 
@@ -214,15 +221,17 @@ Después de todo el trabajo realizado concluimos lo siguiente:
 
 - La identificación de áreas de presencia a la hora de planificar áreas marinas. En concreto la delimitación de las zonas de pesca para el consumo y para la conservación de la especie.
 
-- Entre los modelos frecuentistas, MAXENT, siendo el de los más sencillos realiza ligeramente mejores predicciones que GLM. La calidad de las de las predicciones con GLM son casi iguales pero, siendo algo mas complejo, este tiene mejor interpretabilidad.
+- Entre los modelos frecuentistas, MAXENT, siendo el de los más sencillos realiza ligeramente mejores predicciones que GLM. La calidad de las de las predicciones con GLM son casi iguales pero, siendo algo mas complejo, este ultimo tiene mejor interpretabilidad.
 
 - La aplicación de Modelos Jerárquicos Bayesianos utilizando el software R-INLA permite hacer inferencia mas efeciente, intuitiva y sencilla a nivel computacional. Sin embargo, su capacidad predictiva para este área es dificil computacionalmente, por lo que sería idóneo realizar de nuevo la modelización de cada área por separado.
+
+- Desde 2040 hasta 2050, según el escenario climatico RCP 4.5, se observará una grande disminución de los bancos de anchoas en el Meditteráneo. Su principal habitat se restringirá a zonas del Atlántico noreste.
 
 # PERSPECTIVA DE FUTURO
 
 Los siguientes pasos a seguir serán:
 
-- La realización de otros modelos como bosted regresion tree, random forest y GAM.
+- La realización de otros modelos como bosted regresion tree, random forest, modelos que incluyan autocorrelación espacio-temporal y GAM.
 - Probar a realizar el modelo de MAXENT con otro paquete o software.
 - Volver a realizar el modelo de INLA para cada área por separado o centrándonos solo en Atlántico Norte. Dependiendo del tiempo del que dispongamos.
 
