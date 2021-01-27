@@ -127,8 +127,7 @@ De cara al futuro estamos valorando el utilizar otro paquete o un tipo de softwa
 Nuestros datos de presencia y pseudoausencia son datos geoestadísticos (observaciones de todo un espacio continuo) que provienen de un espacio abierto, por lo que, se ven influenciados de los datos vecinos. Esto significa que existe una autocorrelación espacial entre nuestros datos que no se ha incluido en los modelizacios previos.
 Al realizar un modelo geoestadístico se asume que las observaciones están correlacionadas y que las observaciones más cercanas son mucho más similares respecto a las que están más lejos.
 
-Además, al realizar este modelo con métodos bayesianos…….
-Para esta estimación, hemos utilizado el software R-INLA () ya que……( es una alternativa más rápida que el MCMC a nivel computacional)…. Meter lo de MJBS.
+
 
 Por lo tanto, el modelo que hemos utilizado para estimar la distribución de la anchoa europea es el que se muestra en el diagrama a continuación: (diagrama de INLA)
 
