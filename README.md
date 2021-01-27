@@ -129,7 +129,7 @@ Para la estimación de este modelo hemos utilizado el software R-INLA ya que nos
 
 Por lo tanto, el modelo que hemos utilizado para estimar la distribución de la anchoa europea es el que se muestra en el diagrama a continuación: (diagrama de INLA)
 
-![Diagrama del modelo relizado (estilo Kruschke)](.../Imágenes/INLA_krusche_diagram.png)
+![Diagrama del modelo relizado (estilo Kruschke)](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/INLA_krusche_diagram.png?raw=true)
 
 Como se trata de un modelo Jerárquico Bayesiano, tiene varios niveles:
 
@@ -167,20 +167,20 @@ Como distribuciones a priori para estos hyperparametros, hemos utilizado los val
 
 El SPDE a efectos prácticos se realiza con el uso del mesh (Delaunay triangulation). EN nuestro modelo, el mesh utilizado ha sido el siguiente.
 
-![Nuestro mesh](.../Imágenes/mesh_plot.PNG)
+![Nuestro mesh](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/mesh_plot.PNG?raw=true)
 
 A continuación se muestran los valores de los parametros obtenidos para nuestro modelos.
 
-![Modelo estimado en INLA](.../Imágenes/summary_modelo_inla.PNG)
+![Modelo estimado en INLA](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/summary_modelo_inla.PNG?raw=true)
 
 
 # NUETROS RESULTADOS
 
 Para evaluar la calidad de las predicciones realizadas creamos una función que realizase la media de 10 validaciones cruzadas con cada uno de los modelos frecuentistas y así poder compararlos entre sí de forma mas sencilla. Los criterios de valoración que vamos a usar son: AUC, Kappa, COR, TSS, sensitividad y especificidad. 
 
-![alt text](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/commit/155ef0ce8ca4d61f707bcb415f9227482132b84b)
+![alt text](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/Criterios%20de%20Calidad.png?raw=true)
 
-La siguiente parte fue realizar el mapa predictivo de los correspondientes modelos realizados: (CATERINA METE IMÁGENES)
+La siguiente parte fue realizar el mapa predictivo de los correspondientes modelos realizados: ( METER IMÁGENES PREDICCION)
 
 # ¿QUE HEMOS OBTENIDO DE TODO ESTO? 
 
