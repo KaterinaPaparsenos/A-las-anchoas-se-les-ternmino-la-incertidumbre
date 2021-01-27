@@ -203,6 +203,11 @@ Para evaluar la calidad de las predicciones realizadas creamos una función que 
 
 La siguiente parte fue realizar el mapa predictivo de los correspondientes modelos realizados: ( METER IMÁGENES PREDICCION)
 
+| predictiva MAXENT      | predictiva a posteriori INLA    | 
+| ------------- |:-------------:| 
+| ![Maxent pred](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/maxent%20perfecto.jpg?raw=true) | ![INLA pred](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/INLA_predictiva_rpc4.5.png?raw=true) |
+
+
 # ¿QUE HEMOS OBTENIDO DE TODO ESTO? 
 
 Después de todo el trabajo realizado concluimos lo siguiente:
