@@ -152,13 +152,12 @@ donde ![\alpha= intercept](https://latex.codecogs.com/gif.latex?%5Calpha%3D%20in
 
 * Efecto aleatorio:
 
-⋅⋅⋅El efecto aleatorio especial _W_ es una función isotrópica de covarianza Matérn y se asume que sigue una distribución Gaussiana multivariante donde su matriz de covarianza depende de las distancias entre las observaciones y los hyperparametros varianza ( ![\sigma^2](https://latex.codecogs.com/gif.latex?%5Csigma%5E2) ) y rango (![fi](https://latex.codecogs.com/gif.latex?%5Cphi)) (es la distancia a partir de la cual dos observaciones dejan de estar correlacionadas): 
+⋅⋅⋅ El efecto aleatorio especial _W_ es una función isotrópica de covarianza Matérn y se asume que sigue una distribución Gaussiana multivariante donde su matriz de covarianza depende de las distancias entre las observaciones y los hyperparametros varianza ( ![\sigma^2](https://latex.codecogs.com/gif.latex?%5Csigma%5E2) ) y rango (![fi](https://latex.codecogs.com/gif.latex?%5Cphi)) (es la distancia a partir de la cual dos observaciones dejan de estar correlacionadas): 
 ![W_i](https://latex.codecogs.com/gif.latex?W_i) ~ ![N(0, \sigma^2 H(\phi)](https://latex.codecogs.com/gif.latex?N%280%2C%20%5Csigma%5E2%20H%28%5Cphi%29)
 
-⋅⋅⋅A nivel computacional, esta matriz es muy difícil de calcular, pero al utilizar el método INLA se utiliza el **SPDE** (Stochastic Partial Differential Equation approach) para poder llegar a calcular esa matriz de covarianza de manera indirecta. EL SPDE lo que hace es reparametrizar esta matriz con otros dos parámetros ![$\kappa$](https://latex.codecogs.com/gif.latex?%5Ckappa) y ![$\tau$](https://latex.codecogs.com/gif.latex?%5Ctau), tal que así: 
-![W_i](https://latex.codecogs.com/gif.latex?W_i) ~ ![N(0, Q($\kappa$,$\tau$)$](https://latex.codecogs.com/gif.latex?N%280%2C%20Q%28%5Ckappa%2C%5Ctau%29%29) 
-;
-⋅⋅⋅Donde ![$\kappa$](https://latex.codecogs.com/gif.latex?%5Ckappa) y ![$\tau$](https://latex.codecogs.com/gif.latex?%5Ctau) determinan el rango y la varianza del efecto espacial respectivamente.
+⋅⋅⋅ A nivel computacional, esta matriz es muy difícil de calcular, pero al utilizar el método INLA se utiliza el **SPDE** (Stochastic Partial Differential Equation approach) para poder llegar a calcular esa matriz de covarianza de manera indirecta. EL SPDE lo que hace es reparametrizar esta matriz con otros dos parámetros ![$\kappa$](https://latex.codecogs.com/gif.latex?%5Ckappa) y ![$\tau$](https://latex.codecogs.com/gif.latex?%5Ctau), tal que así: 
+![W_i](https://latex.codecogs.com/gif.latex?W_i) ~ ![N(0, Q($\kappa$,$\tau$)$](https://latex.codecogs.com/gif.latex?N%280%2C%20Q%28%5Ckappa%2C%5Ctau%29%29) ;
+⋅⋅⋅ Donde ![$\kappa$](https://latex.codecogs.com/gif.latex?%5Ckappa) y ![$\tau$](https://latex.codecogs.com/gif.latex?%5Ctau) determinan el rango y la varianza del efecto espacial respectivamente.
 
 
 **Nivel 3**: _Hyperparametros_
