@@ -53,7 +53,7 @@ En cuanto a la selección de covariables primero miramos la correlación entre e
 
 Se aprecia sobre todo que hay una alta correlación entre ppmean con tempmean y salinity. 
 Con el fin de ver cómo es la forma en la cual se relacionan las covariables entre si para valorar la posibilidad de en un futuro realizar o no un modelo aditivo generalizado (gam).
-![Gpairs](/Imágenes/Gpairs.jpg)
+![Gpairs](.../Imágenes/Gpairs.jpg)
 
 A la vista de que la relación entre las covariables no es para nada lineal, decidimos decantarnos por realizar modelos lineales generalizados (glms, tanto en frecuentista como en INLA) debido a que la varaible respuesta sigue una distribución binomial  y, más adelante probar ajustando con un gam.
 Posteriormente para poder decantarnos finalmente con qué variables quedarnos para comenzar a ajustar los modelos miramos el GVIF. Primero introducimos las seis variables juntas y a continuación fuimos, una a una, quitando las que tenían un GVIF mas alto. El resultado final fue el siguiente:
@@ -127,7 +127,7 @@ Nuestros datos de presencia y pseudoausencia son datos geoestadísticos (observa
 
 Para la estimación de este modelo hemos utilizado el software R-INLA ya que nos permite utilizar la estructura de los Modelos Jerárquicos Bayesianos y realizar simulaciones más rápidas que con el MCMC. 
 
-Por lo tanto, el modelo que hemos utilizado para estimar la distribución de la anchoa europea es el que se muestra en el diagrama a continuación.
+Por lo tanto, el modelo que hemos utilizado para estimar la distribución de la anchoa europea es el que se muestra en el diagrama a continuación: (diagrama de INLA)
 
 ![Diagrama del modelo relizado (estilo Kruschke)](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/INLA_krusche_diagram.png)
 
@@ -173,12 +173,6 @@ El SPDE a efectos prácticos se realiza con el uso del mesh (Delaunay triangulat
 A continuación se muestran los valores de los parametros obtenidos para nuestro modelos.
 
 ![Modelo estimado en INLA](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/summary_modelo_inla.PNG)
-
-Las ventajas que tiene este modelo respecto a los anteriores son:
--	Se incluye en la estimación la autocorrelación espacial de los datos 
--	La estimación de los parámetros es más exacta y la interpretación de los resultados es fácil y directa (ya que indican la probabilidad de que un parámetro tome un cierto valor). 
--	Podemos especificar las distribuciones de los parámetros (dependientes a su vez de otros parámetros) cuando sabemos cómo se distribuyen (priors).
-
 
 
 # NUETROS RESULTADOS
