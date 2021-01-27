@@ -159,6 +159,9 @@ El SPDE a efectos prácticos se realiza con el uso del mesh (Delaunay triangulat
 
 ![Nuestro mesh](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/mesh_plot.PNG)
 
+![Modelo estimado en INLA](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/summary_modelo_inla.PNG)
+
+
 ![Distribucion a posterior del efecto espacial](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/plot_dist_poster_efEspacial.PNG)
 
 
