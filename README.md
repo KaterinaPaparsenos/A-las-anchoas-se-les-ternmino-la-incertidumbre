@@ -166,15 +166,13 @@ $2log\kappa~ N(\mu_\kappa, p_kappa)$ y $log\tau~ N(\mu_\tau, p_\tau)$
 
 Como distribuciones a priori para estos hyperparametros, hemos utilizado los valores que tiene INLA por defecto, que son: rango $\phi= 20%$ de nuestro área de estudio y la varianza $\sigma^2= 1$.
 
-El SPDE a efectos prácticos se realiza con el uso del mesh (Delaunay triangulation).
-(Imagen del mesh)
+El SPDE a efectos prácticos se realiza con el uso del mesh (Delaunay triangulation). EN nuestro modelo, el mesh utilizado ha sido el siguiente.
 
 ![Nuestro mesh](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/mesh_plot.PNG)
 
+A continuación se muestran los valores de los parametros obtenidos para nuestro modelos.
+
 ![Modelo estimado en INLA](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/summary_modelo_inla.PNG)
-
-
-![Distribucion a posterior del efecto espacial](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/plot_dist_poster_efEspacial.PNG)
 
 
 # NUETROS RESULTADOS
