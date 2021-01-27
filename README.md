@@ -8,6 +8,8 @@ En el poster hablamos sobre que son los modelos de distribución de especies (SD
 
 Esta pagina junto con el poster son una pequeña parte de nuestros trabajos fin de master. Hemos empezado hace poco, por lo que nos queda mucho por desarrollar y mejorar. Cualquier sugerencia o idea respecto al tema será bienvenida.
 
+En caso de dudas, sugerencias u otra cosa, pueden escribirnos a kateopap@gmail.com o a irenethinker17@gmail.com.
+
 ***
 
 
@@ -32,7 +34,7 @@ En nuestro póster, nosotras evaluamos cómo afectará el cambio climático en l
 Por un lado, los datos de presencias de anchoas en Atlántico Norte y Mediterraneo los hemos obtenido de la página [AQUAMAPS]( https://www.aquamaps.org/receive.php?type_of_map=regular)
 
 Habría que clickar en “Point map” que debería llevar a una opción de descarga de datos en diversos formatos (nosotras hemos utilizado .csv)
-La última vez que tratamos de acceder la página no cargaba por lo que no hemos podido adjuntar imágenes para explicar de forma mas ilustrativa cómo hacer la descarga. En caso de no poder acceder a los datos pueden escribirnos a kateopap@gmail.com o a irenethinker17@gmail.com.
+La última vez que tratamos de acceder la página no cargaba por lo que no hemos podido adjuntar imágenes para explicar de forma mas ilustrativa cómo hacer la descarga.
 
 Las pseudoausencias se generaron con la siguiente semilla “141592” y se adjuntaron a la base de datos final.   
 
