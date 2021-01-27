@@ -13,15 +13,15 @@ En caso de dudas, sugerencias u otra cosa, pueden escribirnos a kateopap@gmail.c
 ***
 
 
-# ¿PORQUE ESTUDIAR LA DISTRIBUCIÓN DE LAS ANCHOAS? :
+# ¿PORQUE ESTUDIAR LA DISTRIBUCIÓN DE LAS ANCHOAS? 
 
 Los modelos de distribución de especies (SDM) son el principal método de modelización en ecología cuantitativa. Se utilizan principalmente para estudiar la distribución geográfica de las especies de nuestro planeta, así como para evaluar el impacto que tendrá el cambio climático en sus distribuciones.
 
 La dificultad de los SDMs es encontrar métodos que consigan vincular de manera eficiente la información que se tiene de las especies con las variables ambientales para poder  predecir dónde es (o cuanto de) probable (es) que estén presentes en lugares o periodos de tiempo no muestreados. Normalmente se utilizan modelos complejos donde se encuentran problemas como:
-- Exceso de ceros
-- No linealidad de la variables explixatorias
-- Varianza no constante
-- Correlación espacio-temporal 
+ * Exceso de ceros
+ * No linealidad de la variables explixatorias
+ * Varianza no constante
+ * Correlación espacio-temporal 
 
 La capacidad de adaptación a los cambios ambientales varía mucho entre los diferentes organismos. Las distribuciones de las especies más sensibles se verán muy afectadas por el continuo calentamiento del planeta, mientras que muchas llegarán a extinguirse.
 
@@ -122,7 +122,7 @@ De cara al futuro estamos valorando el utilizar otro paquete o un tipo de softwa
 #### MODELO 3: MODELO LINEAL GENERALIZADO (GLM)
 
 
-#### MODELO 4: MODELO GEOESPACIAL BAYESIANO:
+#### MODELO 4: MODELO GEOESPACIAL BAYESIANO
 
 Nuestros datos de presencia y pseudoausencia son datos geoestadísticos (observaciones de todo un espacio continuo) que provienen de un espacio abierto, por lo que, se ven influenciados de los datos vecinos. Esto significa que existe una autocorrelación espacial entre nuestros datos que no se ha incluido en los modelizacios previos.
 Al realizar un modelo geoestadístico se asume que las observaciones están correlacionadas y que las observaciones más cercanas son mucho más similares respecto a las que están más lejos.
@@ -184,7 +184,7 @@ El SPDE a efectos prácticos se realiza con el uso del mesh (Delaunay triangulat
 
 Para evaluar la calidad de las predicciones realizadas creamos una función que realizase la media de 10 validaciones cruzadas con cada uno de los modelos frecuentistas y así poder compararlos entre sí de forma mas sencilla. Los criterios de valoración que vamos a usar son: AUC, Kappa, COR, TSS, sensitividad y especificidad. 
 
-![alt text](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/commit/155ef0ce8ca4d61f707bcb415f9227482132b84b)
+![criterios de calidad](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/Criterios%20de%20Calidad.png?raw=true)
 
 La siguiente parte fue realizar el mapa predictivo de los correspondientes modelos realizados: (CATERINA METE IMÁGENES)
 
