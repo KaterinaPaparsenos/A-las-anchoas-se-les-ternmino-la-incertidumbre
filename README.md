@@ -42,7 +42,7 @@ Por otro lado, las variables ambientales utilizadas para la creación de los mod
 
 La base de datos final incluía dos columnas correspondientes a las coordenadas de las presencias y pseudoausencias, otra compuesta por ceros y unos que indicaba si eran presencias o pseudoausencias (variable respuesta), y el resto eran seis columnas que correspondían al valor de las covariables asociadas a las distintas coordenadas.
 
-Y finalmente, las variables utilizadas para realizar predicciones futuras fueron obtenidas desde bio-ORACLE. Se han utilizado las medias para la salinidad y la temperatura superficial desde 2040 hasta 2050 según el posible futuro climatico RCP 4.5. En este escenario se propone que la temperatura global aumentará aproximadamente 1.4 oC y las emisiones de los gases de efecto invernadero empezarán a disminuir a partir del 2040.
+Y finalmente, las variables utilizadas para realizar predicciones futuras fueron obtenidas desde bio-ORACLE. Se han utilizado las medias para la salinidad y la temperatura superficial desde 2040 hasta 2050 según el posible futuro climatico RCP 4.5. En este escenario se propone que la temperatura global aumentará aproximadamente 1.4 ºC y las emisiones de los gases de efecto invernadero empezarán a disminuir a partir del 2040.
 
 Con respecto a las covariables recortamos los ráster para trabajar solo en el cuadrante de -25º a 40º en longitud y de 30º a 65º de latitud.
 
