@@ -128,7 +128,7 @@ En la siguiente imagen se muestra la salida del ```summary() ``` para nuestro mo
 
 Según los p-valores obtenidos, de las variables solo la batimetría y la salinidad son significativas. No hemos eliminado el resto de variables para poder hacer comparaciones con el resto de modelos.
 
-Es importante mencionar que el modelo GLM no ajusta la variable respuesta sino a la función de enlace. En el caso del modelo logit esta función es ![logit(\pi )](https://latex.codecogs.com/gif.latex?logit%28%5Cpi%20%29%3D%20log%28%5Ctfrac%7B%5Cpi%20%7D%7B1-%5Cpi%20%7D%29), ![\pi ](https://latex.codecogs.com/gif.latex?%5Cpi) donde es la probabilidad que la anchoa tome valor 1 (presencia en ese punto).
+Es importante mencionar que el modelo GLM no ajusta la variable respuesta sino a la función de enlace. En el caso del modelo logit esta función es ![logit(\pi )](https://latex.codecogs.com/gif.latex?logit%28%5Cpi%20%29%3D%20log%28%5Ctfrac%7B%5Cpi%20%7D%7B1-%5Cpi%20%7D%29), donde ![\pi ](https://latex.codecogs.com/gif.latex?%5Cpi) es la probabilidad que la anchoa tome valor 1 (presencia en ese punto).
 Al cociente ![\frac{\pi }{1-\pi }](https://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cpi%20%7D%7B1-%5Cpi%20%7D) se le conoce como _odds ratio_ y por tanto, los coeficientes del modelo logit se interpretan como el logaritmo del odds ratio. Como se puede ver, la interpretabilidad del modelo puede ser algo confusa.
 
 
