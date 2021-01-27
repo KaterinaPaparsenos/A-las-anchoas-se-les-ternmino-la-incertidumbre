@@ -127,7 +127,7 @@ Nuestros datos de presencia y pseudoausencia son datos geoestadísticos (observa
 
 Para la estimación de este modelo hemos utilizado el software R-INLA ya que nos permite utilizar la estructura de los Modelos Jerárquicos Bayesianos y realizar simulaciones más rápidas que con el MCMC. 
 
-Por lo tanto, el modelo que hemos utilizado para estimar la distribución de la anchoa europea es el que se muestra en el diagrama a continuación: (diagrama de INLA)
+Por lo tanto, el modelo que hemos utilizado para estimar la distribución de la anchoa europea es el que se muestra en el diagrama a continuación.
 
 ![Diagrama del modelo relizado (estilo Kruschke)](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/INLA_krusche_diagram.png)
 
@@ -173,6 +173,12 @@ El SPDE a efectos prácticos se realiza con el uso del mesh (Delaunay triangulat
 A continuación se muestran los valores de los parametros obtenidos para nuestro modelos.
 
 ![Modelo estimado en INLA](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/summary_modelo_inla.PNG)
+
+Las ventajas que tiene este modelo respecto a los anteriores son:
+-	Se incluye en la estimación la autocorrelación espacial de los datos 
+-	La estimación de los parámetros es más exacta y la interpretación de los resultados es fácil y directa (ya que indican la probabilidad de que un parámetro tome un cierto valor). 
+-	Podemos especificar las distribuciones de los parámetros (dependientes a su vez de otros parámetros) cuando sabemos cómo se distribuyen (priors).
+
 
 
 # NUETROS RESULTADOS
