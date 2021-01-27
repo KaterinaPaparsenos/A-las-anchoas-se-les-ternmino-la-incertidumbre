@@ -123,7 +123,11 @@ De cara al futuro estamos valorando el utilizar otro paquete o un tipo de softwa
 #### MODELO 4: GEOESPACIAL BAYESIANO
 
 
-# NUETROS RESULTADOS:
+# NUETROS RESULTADOS
+
+Para evaluar la calidad de las predicciones realizadas creamos una función que realizase la media de 10 validaciones cruzadas con cada uno de los modelos frecuentistas y así poder compararlos entre sí de forma mas sencilla. Los criterios de valoración que vamos a usar son: AUC, Kappa, COR, TSS, sensitividad y especificidad. 
+
+![alt image](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/commit/155ef0ce8ca4d61f707bcb415f9227482132b84b)
 
 # ¿QUE HEMOS OBTENIDO DE TODO ESTO? 
 
