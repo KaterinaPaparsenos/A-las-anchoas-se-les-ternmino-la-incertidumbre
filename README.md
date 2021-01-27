@@ -49,15 +49,15 @@ Una vez que tuvimos todas las variables, nos quedamos únicamente con las presen
 # SELECCIÓN DE VARIABLES
 
 En cuanto a la selección de covariables primero miramos la correlación entre ellas.
-![alt text](/Im%C3%A1genes/correlación.jpg)
+![Diagrama de correlaciones](/Im%C3%A1genes/correlación.jpg)
 
 Se aprecia sobre todo que hay una alta correlación entre ppmean con tempmean y salinity. 
 Con el fin de ver cómo es la forma en la cual se relacionan las variables entre si para valorar la posibilidad de en un futuro realizar o no un modelo aditivo generalizado (gam).
-![alt text](/Im%C3%A1genes/Gpairs.jpg)
+![poner titulo](/Im%C3%A1genes/Gpairs.jpg)
 
 A la vista de que la relación entre las covariables no es para nada lineal decidimos decantarnos por realizar modelos lineales generalizados (glm, tanto en frecuentista como en INLA) y, más adelante probar ajustando con un gam.
 Posteriormente para poder decantarnos finalmente con qué variables quedarnos para comenzar a ajustar los modelos miramos el GVIF. Primero introducimos  las seis variables juntas y a continuación fuimos, una a una, quitando las que tenían un GVIF mas alto. El resultado final fue el siguiente:
-![alt text](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/Tabla.png)
+![Tabla comparacion de variables ambientales](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/Tabla.png)
 
 # ¿QUE MODELOS HEMOS UTILIZADO? 
 
@@ -134,26 +134,35 @@ Por lo tanto, el modelo que hemos utilizado para estimar la distribución de la 
 
 Como se trata de un modelo Jerárquico Bayesiano, tiene varios niveles:
 
-Nivel 1: Verosimilitud:
-Se trata de la función de verosimilitud condicionalmente independiente en la cual nuestra variable respuesta y dado nuestros datos sigue una distribución Bernoulli (1 es la presencia y 0 la pseudoausencia) de parámetro pi. Como función de enlace hemos utilizado la función “logit”.
-Por lo tanto, la probabilidad de ocurrencia se calculará de la siguiente manera:
-Logit(pi)= intercept+predictor Lineal+efecto aleatorio espacial,
-Donde A= intercept; bXi= Predictor linear para cada observación i; Wi=efecto aleatorio espacial
+**Nivel 1**: _Verosimilitud_
 
-Nivel 2: Campo Latente Gausiano:
--	Efectos fijos:  
-Consideramos que el predictor lineal sigue una distribución normal de parámetros m y s^2. Como distribución a priori para el predictor lineal, hemos utilizado el que viene por defecto en inla que es una ditribución normal de media 0 y varianza 100.
-Se considera distribución a priori de los efectos fijos una distribución Gausiana N(0,100)
--	Efecto aleatorio:
-El efecto aleatorio especial W es una función isotrópica de covarianza Matérn y se asume que sigue una distribución Gaussiana multivariante donde su matriz de covarianza depende de las distancias entre las observaciones y los hyperparametros (sigma^2) (la varianza) y rango (fi) (es la distancia a partir de la cual dos observaciones dejan de estar correlacionadas):
-Wi N(0, sigma^2H(fi)) 
-A nivel computacional, esta matriz es muy difícil de calcular, pero al utilizar el método INLA se utiliza el SPDE (Stochastic Partial Differential Equation approach) para poder llegar a calcular esa matriz de covarianza de manera indirecta. EL SPDE lo que hace es reparametrizar esta matriz con otros dos parámetros (kappa y taf) tal que así:
-Wi N(0, Q(k,t)); 
-Donde kappa y tau determinan el rango y la varianza del efecto espacial respectivamente.
-Nivel 3: Hyperparametros
+Se trata de la función de verosimilitud condicionalmente independiente en la cual nuestra variable respuesta $y_i$, dado nuestros datos, sigue una distribución Bernoulli $y_i~ Ber(\pi)$
+(1 es la presencia y 0 la pseudoausencia). Como función de enlace hemos utilizado la función “_logit_”. Por lo tanto, la probabilidad de ocurrencia se calculará de la siguiente manera:
+
+$logit(\pi)= \alpha+ \beta_i X_i+ W_i$,
+
+donde $\alpha$= intercept; $\beta_i X_i$= predictor linear para cada observación i; $W_i$= efecto aleatorio espacial
+
+**Nivel 2**: _Campo Latente Gausiano_
+
+*	Efectos fijos:  
+⋅⋅⋅Consideramos que el predictor lineal sigue una distribución normal de parámetros$\mu$ y $\sigma^2$. Como distribución a priori para el predictor lineal, hemos utilizado el que viene por defecto en INLA que es una distribución Gausiana N(0,100)
+
+* Efecto aleatorio:
+⋅⋅⋅El efecto aleatorio especial $W$ es una función isotrópica de covarianza Matérn y se asume que sigue una distribución Gaussiana multivariante donde su matriz de covarianza depende de las distancias entre las observaciones y los hyperparametros varianza ($\sigma^2$) y rango ($\phi$) (es la distancia a partir de la cual dos observaciones dejan de estar correlacionadas):
+$W_i~ N(0, \sigma^2 H(\phi))$ 
+
+⋅⋅⋅A nivel computacional, esta matriz es muy difícil de calcular, pero al utilizar el método INLA se utiliza el **SPDE** (Stochastic Partial Differential Equation approach) para poder llegar a calcular esa matriz de covarianza de manera indirecta. EL SPDE lo que hace es reparametrizar esta matriz con otros dos parámetros ($\kappa$ y $\tau$) tal que así: $W_i~ N(0, Q($\kappa$,$\tau$)$;
+⋅⋅⋅Donde $\kappa$ y $\tau$ determinan el rango y la varianza del efecto espacial respectivamente.
+
+
+**Nivel 3**: _Hyperparametros_
+
 Son los hyperparametros del efecto espacial que se calculan de la siguiente manera:
-2logkappa N(mikappa, pkappa) y logtaf N(mitaf,ptaf)
-Como distribuciones a priori para estos hyperparametros, hemos utilizado los valores que por defecto da INLA y son: rango fi φ es el 20% de nuestro área de estudio, y la varianza σ2= 1.
+$2log\kappa~N(\mu_\kappa, p_kappa)$ y $log\tau~N(\mu_\tau, p_\tau)$
+
+Como distribuciones a priori para estos hyperparametros, hemos utilizado los valores que tiene INLA por defecto, que son: rango $\phi= 20%$ de nuestro área de estudio y la varianza $\sigma^2= 1$.
+
 El SPDE a efectos prácticos se realiza con el uso del mesh (Delaunay triangulation).
 (Imagen del mesh)
 
