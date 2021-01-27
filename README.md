@@ -127,9 +127,26 @@ De cara al futuro estamos valorando el utilizar otro paquete o un tipo de softwa
 
 Para evaluar la calidad de las predicciones realizadas creamos una función que realizase la media de 10 validaciones cruzadas con cada uno de los modelos frecuentistas y así poder compararlos entre sí de forma mas sencilla. Los criterios de valoración que vamos a usar son: AUC, Kappa, COR, TSS, sensitividad y especificidad. 
 
-![alt image](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/commit/155ef0ce8ca4d61f707bcb415f9227482132b84b)
+![alt text](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/commit/155ef0ce8ca4d61f707bcb415f9227482132b84b)
+
+La siguiente parte fue realizar el mapa predictivo de los correspondientes modelos realizados: (CATERINA METE IMÁGENES)
 
 # ¿QUE HEMOS OBTENIDO DE TODO ESTO? 
 
+Después de todo el trabajo realizado concluimos lo siguiente:
+
+- La identificación de áreas de presencia a la hora de planificar áreas marinas. En concreto la delimitación de las zonas de pesca para el consumo y para la conservación de la especie.
+
+- Entre los modelos frecuentistas, MAXENT, siendo el de los más sencillos realiza ligeramente mejores predicciones que GLM. La calidad de las de las predicciones con GLM son casi iguales pero, siendo algo mas complejo, este tiene mejor interpretabilidad.
+
+- La aplicación de Modelos Jerárquicos Bayesianos utilizando el software R-INLA permite hacer inferencia mas efeciente, intuitiva y sencilla a nivel computacional. Sin embargo, su capacidad predictiva para este área es dificil computacionalmente, por lo que sería idóneo realizar de nuevo la modelización de cada área por separado.
+
+# PERSPECTIVA DE FUTURO
+
+Los siguientes pasos a seguir serán:
+
+- La realización de otros modelos como bosted regresion tree, random forest y gam.
+- Probar a realizar el modelo de MAXENT con otro paquete o software.
+- Volver a realizar el modelo de INLA para cada área por separado o centrándonos solo en Atlántico Norte. Dependiendo del tiempo del que dispongamos.
 
 
