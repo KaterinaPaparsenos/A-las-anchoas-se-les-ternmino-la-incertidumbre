@@ -145,12 +145,14 @@ donde $\alpha$= intercept; $\beta_i X_i$= predictor linear para cada observació
 
 **Nivel 2**: _Campo Latente Gausiano_
 
-*	Efectos fijos:  
+*	Efectos fijos: 
+
 ⋅⋅⋅Consideramos que el predictor lineal sigue una distribución normal de parámetros$\mu$ y $\sigma^2$. Como distribución a priori para el predictor lineal, hemos utilizado el que viene por defecto en INLA que es una distribución Gausiana N(0,100)
 
 * Efecto aleatorio:
+
 ⋅⋅⋅El efecto aleatorio especial $W$ es una función isotrópica de covarianza Matérn y se asume que sigue una distribución Gaussiana multivariante donde su matriz de covarianza depende de las distancias entre las observaciones y los hyperparametros varianza ($\sigma^2$) y rango ($\phi$) (es la distancia a partir de la cual dos observaciones dejan de estar correlacionadas):
-$W_i~ N(0, \sigma^2 H(\phi))$ 
+`$W_i~ N(0, \sigma^2 H(\phi))$`   $W_i~ N(0, \sigma^2 H(\phi))$ 
 
 ⋅⋅⋅A nivel computacional, esta matriz es muy difícil de calcular, pero al utilizar el método INLA se utiliza el **SPDE** (Stochastic Partial Differential Equation approach) para poder llegar a calcular esa matriz de covarianza de manera indirecta. EL SPDE lo que hace es reparametrizar esta matriz con otros dos parámetros ($\kappa$ y $\tau$) tal que así: $W_i~ N(0, Q($\kappa$,$\tau$)$;
 ⋅⋅⋅Donde $\kappa$ y $\tau$ determinan el rango y la varianza del efecto espacial respectivamente.
@@ -159,7 +161,7 @@ $W_i~ N(0, \sigma^2 H(\phi))$
 **Nivel 3**: _Hyperparametros_
 
 Son los hyperparametros del efecto espacial que se calculan de la siguiente manera:
-$2log\kappa~N(\mu_\kappa, p_kappa)$ y $log\tau~N(\mu_\tau, p_\tau)$
+$2log\kappa~ N(\mu_\kappa, p_kappa)$ y $log\tau~ N(\mu_\tau, p_\tau)$
 
 Como distribuciones a priori para estos hyperparametros, hemos utilizado los valores que tiene INLA por defecto, que son: rango $\phi= 20%$ de nuestro área de estudio y la varianza $\sigma^2= 1$.
 
