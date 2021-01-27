@@ -120,7 +120,43 @@ De cara al futuro estamos valorando el utilizar otro paquete o un tipo de softwa
 #### MODELO 3: MODELO LINEAL GENERALIZADO (GLM)
 
 
-#### MODELO 4: GEOESPACIAL BAYESIANO
+#### MODELO 4: MODELO GEOESPACIAL BAYESIANO:
+
+Nuestros datos de presencia y pseudoausencia son datos geoestadísticos (observaciones de todo un espacio continuo) que provienen de un espacio abierto, por lo que, se ven influenciados de los datos vecinos. Esto significa que existe una autocorrelación espacial entre nuestros datos que no se ha incluido en los modelizacios previos.
+Al realizar un modelo geoestadístico se asume que las observaciones están correlacionadas y que las observaciones más cercanas son mucho más similares respecto a las que están más lejos.
+
+Además, al realizar este modelo con métodos bayesianos…….
+Para esta estimación, hemos utilizado el software R-INLA () ya que……( es una alternativa más rápida que el MCMC a nivel computacional)…. Meter lo de MJBS.
+
+Por lo tanto, el modelo que hemos utilizado para estimar la distribución de la anchoa europea es el que se muestra en el diagrama a continuación: (diagrama de INLA)
+
+![alt text](image.jpg)
+
+Como se trata de un modelo Jerárquico Bayesiano, tiene varios niveles:
+
+Nivel 1: Verosimilitud:
+Se trata de la función de verosimilitud condicionalmente independiente en la cual nuestra variable respuesta y dado nuestros datos sigue una distribución Bernoulli (1 es la presencia y 0 la pseudoausencia) de parámetro pi. Como función de enlace hemos utilizado la función “logit”.
+Por lo tanto, la probabilidad de ocurrencia se calculará de la siguiente manera:
+Logit(pi)= intercept+predictor Lineal+efecto aleatorio espacial,
+Donde A= intercept; bXi= Predictor linear para cada observación i; Wi=efecto aleatorio espacial
+
+Nivel 2: Campo Latente Gausiano:
+-	Efectos fijos:  
+Consideramos que el predictor lineal sigue una distribución normal de parámetros m y s^2. Como distribución a priori para el predictor lineal, hemos utilizado el que viene por defecto en inla que es una ditribución normal de media 0 y varianza 100.
+Se considera distribución a priori de los efectos fijos una distribución Gausiana N(0,100)
+-	Efecto aleatorio:
+El efecto aleatorio especial W es una función isotrópica de covarianza Matérn y se asume que sigue una distribución Gaussiana multivariante donde su matriz de covarianza depende de las distancias entre las observaciones y los hyperparametros (sigma^2) (la varianza) y rango (fi) (es la distancia a partir de la cual dos observaciones dejan de estar correlacionadas):
+Wi N(0, sigma^2H(fi)) 
+A nivel computacional, esta matriz es muy difícil de calcular, pero al utilizar el método INLA se utiliza el SPDE (Stochastic Partial Differential Equation approach) para poder llegar a calcular esa matriz de covarianza de manera indirecta. EL SPDE lo que hace es reparametrizar esta matriz con otros dos parámetros (kappa y taf) tal que así:
+Wi N(0, Q(k,t)); 
+Donde kappa y tau determinan el rango y la varianza del efecto espacial respectivamente.
+Nivel 3: Hyperparametros
+Son los hyperparametros del efecto espacial que se calculan de la siguiente manera:
+2logkappa N(mikappa, pkappa) y logtaf N(mitaf,ptaf)
+Como distribuciones a priori para estos hyperparametros, hemos utilizado los valores que por defecto da INLA y son: rango fi φ es el 20% de nuestro área de estudio, y la varianza σ2= 1.
+El SPDE a efectos prácticos se realiza con el uso del mesh (Delaunay triangulation).
+(Imagen del mesh)
+
 
 
 # NUETROS RESULTADOS
