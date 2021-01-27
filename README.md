@@ -57,6 +57,7 @@ Con el fin de ver cómo es la forma en la cual se relacionan las covariables ent
 
 A la vista de que la relación entre las covariables no es para nada lineal, decidimos decantarnos por realizar modelos lineales generalizados (glms, tanto en frecuentista como en INLA) debido a que la varaible respuesta sigue una distribución binomial  y, más adelante probar ajustando con un gam.
 Posteriormente para poder decantarnos finalmente con qué variables quedarnos para comenzar a ajustar los modelos miramos el GVIF. Primero introducimos las seis variables juntas y a continuación fuimos, una a una, quitando las que tenían un GVIF mas alto. El resultado final fue el siguiente:
+
 ![Tabla comparacion de variables ambientales](https://github.com/KaterinaPaparsenos/A_las_anchoas_se_les_termino_la_incertidumbre/blob/main/Im%C3%A1genes/Tabla.png)
 
 # ¿QUE MODELOS HEMOS UTILIZADO? 
