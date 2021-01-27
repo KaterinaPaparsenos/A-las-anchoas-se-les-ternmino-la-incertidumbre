@@ -49,11 +49,11 @@ Con respecto a las covariables recortamos los ráster para trabajar solo en el c
 # SELECCIÓN DE VARIABLES
 
 En cuanto a la selección de covariables primero miramos la correlación entre ellas.
-![Diagrama de correlaciones](/Im%C3%A1genes/correlación.jpg)
+![Diagrama de correlaciones](/Imágenes/correlación.jpg)
 
 Se aprecia sobre todo que hay una alta correlación entre ppmean con tempmean y salinity. 
 Con el fin de ver cómo es la forma en la cual se relacionan las covariables entre si para valorar la posibilidad de en un futuro realizar o no un modelo aditivo generalizado (gam).
-![Gpairs](/Im%C3%A1genes/Gpairs.jpg)
+![Gpairs](/Imágenes/Gpairs.jpg)
 
 A la vista de que la relación entre las covariables no es para nada lineal, decidimos decantarnos por realizar modelos lineales generalizados (glms, tanto en frecuentista como en INLA) debido a que la varaible respuesta sigue una distribución binomial  y, más adelante probar ajustando con un gam.
 Posteriormente para poder decantarnos finalmente con qué variables quedarnos para comenzar a ajustar los modelos miramos el GVIF. Primero introducimos las seis variables juntas y a continuación fuimos, una a una, quitando las que tenían un GVIF mas alto. El resultado final fue el siguiente:
