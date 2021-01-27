@@ -27,7 +27,7 @@ La capacidad de adaptación a los cambios ambientales varía mucho entre los dif
 
 La anchoa europea (Engraulis encrasicolus) es una de las especies marinas más sensibles a las fluctuaciones del medio ambiente. Es una especie pelágica que se puede encontrar en todo el Atlántico nororiental, Mediterráneo y Mar Negro. Es una especie extremadamente sensible a los cambios ambientales y presenta gran variabilidad ambiental a escala regional. Se trata de una especie de alto interés ecológico y comercial ya que no solo sirve para el abastecimiento humano sino como carnada en otras pesquerías. 
 
-En nuestro póster, nosotras evaluamos cómo afectará el cambio climático en la distribución de la anchoa europea en el Atlántico norte y el Mediterráneo. Primero calculamos distintos modelos de distribución de especies (SDMs) con diferentes enfoques estadísticos, frecuentista y bayesiano, para determinar su actual posición geográfica. Luego proyectamos la posible futura distribución de esta especie para el futuro escenario RCP 4.5 en el cual se propone que la temperatura global aumentará aproximadamente 1.4 oC y las emisiones de los gases de efecto invernadero empezarán a disminuir a partir del 2040.
+En nuestro póster, nosotras evaluamos cómo afectará el cambio climático en la distribución de la anchoa europea en el Atlántico norte y el Mediterráneo. Primero calculamos distintos modelos de distribución de especies (SDMs) con diferentes enfoques estadísticos, frecuentista y bayesiano, para determinar su actual posición geográfica. Luego proyectamos la posible futura distribución de esta especie para el futuro escenario RCP 4.5. 
 
 # ¿DE DONDE SACAMOS NUESTROS DATOS? 
 
@@ -38,13 +38,13 @@ La última vez que tratamos de acceder la página no cargaba por lo que no hemos
 
 Las pseudoausencias se generaron con la siguiente semilla “141592” y se adjuntaron a la base de datos final.   
 
-Por otro lado, las variables ambientales utilizadas para la creación de los modelos fueron: batimetría (bathy), temperatura media superficial (tempmean), oxígeno disuelto (odismean), salinidad superficial media (salinity), producción primaria media (ppmean) y clorofila media (chlomean). Este preselección se basó en lo que se sabe sobre la ecología de la anchoa. Todas se obtuvieron desde Bio-Oracle a excepción de batimetría que la cogimos de MARSPEC. Fueron descargadas directamente desde Rstudio. Estas variables son el resultado de hacer una media de diez años para estos valores.
+Por otro lado, las variables ambientales utilizadas para la creación de los modelos fueron: batimetría (bathy), temperatura media superficial (tempmean), oxígeno disuelto (odismean), salinidad superficial media (salinity), producción primaria media (ppmean) y clorofila media (chlomean). Este preselección se basó en lo que se sabe sobre la ecología de la anchoa. Todas se obtuvieron desde [Bio-ORACLE](https://www.bio-oracle.org/index.php) a excepción de batimetría que la cogimos de [MARSPEC](http://marspec.weebly.com/modern-data.html). Fueron descargadas directamente desde Rstudio. Estas variables son el resultado de hacer una media de diez años para estos valores.
 
 La base de datos final incluía dos columnas correspondientes a las coordenadas de las presencias y pseudoausencias, otra compuesta por ceros y uno que indicaba si eran presencias o pseudoausencias, y el resto eran seis columnas que correspondían al valor de las covariables asociadas a las distintas coordenadas.
 
-Y finalmente, las variables utilizadas para realizar predicciones futuras fueron obtenidas de (METER AQUÍ LO DE CATERINA)
+Y finalmente, las variables utilizadas para realizar las predicciones futuras, fueron obtenidas de Bio-ORACLE. Estas variables representan los valores medios de la salinidad y temperatura superficial del mar entre 2040 y 2050 para el posible futuro escenario climatico RCP 4.5. Este escenario propone que la temperatura global aumentará aproximadamente 1.4 oC y las emisiones de los gases de efecto invernadero empezarán a disminuir a partir del 2040.
 
-Una vez que tuvimos todas las variables, nos quedamos únicamente con las presencias de la zona de Estudio excluyendo Mar Muerto y Mar Egeo. Con respecto a las covariables recortamos los ráster para trabajar solo en el cuadrante de -25º a 40º en longitud y de 30º a 65º de latitud.
+Una vez que tuvimos todas las variables, nos quedamos únicamente con los datos de presencia incluidos en la zona de estudio excluyendo Mar Muerto y Mar Egeo. Con respecto a las covariables recortamos los ráster para trabajar solo en el cuadrante de -25º a 40º en longitud y de 30º a 65º de latitud.
 
 # SELECCIÓN DE VARIABLES
 
